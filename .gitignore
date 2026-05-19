@@ -1,0 +1,11 @@
+*.DS_Store*
+*.env*
+*__pycache__*
+*.vscode*
+.venv/
+.ipynb_checkpoints/
+.idea/
+.pyre/
+.pytest_cache/
+.mypy_cache/
+__pypackages__/

@@ -1,0 +1,58 @@
+type: match_pairs
+visible: false
+header: Match Functions with their Derivatives
+text: |
+  And memorize this table.
+
+  This table has to be memorized. By heart. No excuses.
+shuffle: true
+score: 1
+quiz:
+  left:
+    - text: $\frac{d}{dx}x^k$
+    - text: $\frac{d}{dx}\exp(x)$
+    - text: $\frac{d}{dx}\sin(x)$
+    - text: $\frac{d}{dx}\cos(x)$
+    - text: $\frac{d}{dx}\ln x$
+    - text: $\frac{d}{dx}\tg x$
+    - text: $\frac{d}{dx}\ctg x$
+    - text: $\frac{d}{dx}\arcsin x$
+    - text: $\frac{d}{dx}\arccos x$
+    - text: $\frac{d}{dx}\arctg x$
+    - text: $\frac{d}{dx}\arcctg x$
+    - text: $\frac{d}{dx}(f(x) + g(x))$
+    - text: $\frac{d}{dx}(f(x) g(x))$
+    - text: $\frac{d}{dx}(C f(x))$
+    - text: $\frac{d}{dx}(f(g(x)))$
+  variants:
+    - text: $- \frac{1}{\sin^2 x}$
+    - text: $\exp(x)$
+    - text: $C \frac{d f(x)}{dx} $
+    - text: $-\sin(x)$
+    - text: $\frac{1}{\sqrt{1 - x^2}}$
+    - text: $\cos(x)$
+    - text: $\frac{df(x)}{dx} + \frac{dg(x)}{dx}$
+    - text: $\frac{d f}{d g} \frac{d g}{d x}$
+    - text: $\frac{d f(x)}{dx} g(x) + f(x) \frac{dg(x)}{dx}$
+    - text: $x^{-1}$
+    - text: $\frac{1}{1 + x^2}$
+    - text: $- \frac{1}{1 + x^2}$
+    - text: $- \frac{1}{\sqrt{1 - x^2}}$
+    - text: $\frac{1}{\cos^2 x}$
+    - text: $k x^{k-1}$
+answer:
+  - 67bbb2145c2d3f89e10beb87d6586feb
+  - cabfcb67930f1411cff21f8536905a04
+  - e2011461d47e00da071ccd285e08dba5
+  - 8111f1e792818dfc9e45fee8989d7af5
+  - c426e7d252a3a8e495a75f0fd8af2c4a
+  - 5c07f817128adc02f0c412654d08ba1b
+  - 8963f5c934cfda4f5b19a3bac7fa1877
+  - 5cc349d2277bdcf4653e051de0a5e4f2
+  - a749af0c10f5c3e1b4ccee76a0b2885b
+  - 0e9f72340856a389ead0a5853fa86908
+  - daf31044c4d02be23ebf538e3c8c3a34
+  - 62218cac26dc71493cd167b618ed15fa
+  - b189df8a0f6a1b6f7b33993d96d9fd5e
+  - f89cfe11336794ce8dc45906f0ad2449
+  - 41a23cf7e403cbdd258323acc96f7844

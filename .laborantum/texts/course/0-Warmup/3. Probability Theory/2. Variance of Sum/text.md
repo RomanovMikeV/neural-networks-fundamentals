@@ -1,0 +1,1 @@
+# 2. Expectance of Scaled Random Variable

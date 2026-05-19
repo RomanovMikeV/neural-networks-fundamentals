@@ -1,0 +1,26 @@
+{
+    "courseName": "neural-networks",
+    "reportFormat": [
+        {
+            "type": "string",
+            "name": "name"
+        },
+        {
+            "type": "boolean",
+            "name": "ok"
+        },
+        {
+            "type": "string",
+            "name": "status"
+        }
+    ],
+    "includeData": [
+        ".laborantum/utils",
+        ".laborantum/src",
+        ".devcontainer",
+        ".vscode",
+        ".gitignore",
+        "README.md",
+        "LICENSE"],
+    "buildFolder": "./build"
+}

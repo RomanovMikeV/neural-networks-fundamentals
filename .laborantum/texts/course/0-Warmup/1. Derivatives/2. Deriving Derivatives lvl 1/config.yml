@@ -1,0 +1,44 @@
+type: order_cards
+visible: false
+header: Derivative of Power Function
+text: Order the cards to get proof of derivative of power function
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        Due to infinitisemality of $dx$ all terms except first one are
+        negligible:
+
+        $$k x^{k - 1}$$
+    - text: >
+        Open first bracket:
+
+        $$\frac{x^k + k x^{k - 1} dx + \frac{k (k - 1)}{2} x^{k - 2} (dx)^2 +
+        \dots + (dx)^k - x^k}{dx}$$
+    - text: >
+        First and last termns cancel out:
+
+        $$\frac{k x^{k - 1} dx + \frac{k (k - 1)}{2} x^{k - 2} (dx)^2 + \dots +
+        (dx)^k}{dx}$$
+    - text: >
+        Start with the definition of derivative of a function and insert power
+        function:
+
+
+        $$\frac{df}{dx} = \frac{f(x + dx) - f(x)}{dx}= 
+
+        \frac{(x + dx)^k - x^k}{dx}$$
+    - text: |
+        So, the derivative of power function is:
+        $$\frac{d x^k}{dx} = k x^{k - 1}$$
+    - text: |
+        $dx$ in denominator cancels out:
+        $$k x^{k - 1} + k (k - 1) x^{k - 2} dx + \dots + (dx)^{k - 1}$$
+answer:
+  - 52853d907084f255e140460cbe82e1ef
+  - 11f83c6b15e143d043dcda05c4a8a2be
+  - ef6c5f1900658ab801f61b0004639ba1
+  - ebda259d3f3846c9d3e85383f6db6fe3
+  - 3a3d62ced088e079032396b3d9c42a27
+  - 0710b1a7e021103db759e5fa0c6b7458

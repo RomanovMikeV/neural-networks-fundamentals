@@ -1,0 +1,11 @@
+type: code
+visible: false
+score: 10
+code: []
+run:
+  - jupyter-execute "${relativeTaskPath}/task.ipynb"
+  - cd "${relativeTaskPath}/dist"; python task.py
+  - mv "${relativeTaskPath}/dist/.answer.json" "${relativeTaskPath}/.solution.json"
+  - python .laborantum/utils/checker.py -t "${relativeTaskPath}"
+  - rm "${relativeTaskPath}/.answer.json"
+  - rm "${relativeTaskPath}/.solution.json"
