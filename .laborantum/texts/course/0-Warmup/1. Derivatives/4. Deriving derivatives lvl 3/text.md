@@ -1,1 +1,0 @@
-# 4. Deriving derivatives lvl 3

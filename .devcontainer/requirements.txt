@@ -1,7 +1,11 @@
 numpy==1.26.4
 scipy==1.13.0
 ipykernel==6.25.2
+ipywidgets==8.1.8
+ipympl==0.10.0
 matplotlib==3.8.4
+plotly==6.7.0
+anywidget==0.9.18
 pandas==2.2.2
 scikit-learn==1.4.2
 tqdm==4.66.4

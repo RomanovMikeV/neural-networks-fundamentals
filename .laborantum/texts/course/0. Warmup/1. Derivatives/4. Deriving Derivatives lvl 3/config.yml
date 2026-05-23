@@ -1,0 +1,54 @@
+type: order_cards
+visible: false
+header: Derivative of Compound Function
+text: |
+  Order the cards to get the proof of derivative 
+  of compound function $f(g(x))$.
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        Returning g(x) instead of $y$ and $g'(x) dx$ instead of $dx$:
+
+        $$\frac{f(y) + f'(y) dy - f(g(x))}{dx} = \frac{f(g(x)) + f'(g(x)) g'(x)
+        dx - f(g(x))}{dx}$$
+    - text: |
+        $dx$ in the numerator and the denominator cancel out:
+        $$f'(g(x)) g'(x)$$
+    - text: |
+        So, the derivative of compound function $f(g(x))$ is:
+        $$\frac{df(g(x))}{dx} = f'(g(x)) g'(x) = \frac{df}{dg}\frac{dg}{dx}$$
+    - text: |
+        Simplify $g(x + dx)$:
+        $$\frac{f(g(x) + g'(x)dx) - f(g(x))}{dx}$$
+    - text: |
+        To simplify the first term, take definiion of 
+        derivative 
+        $$\frac{df}{dx} = \frac{f(x + dx) - f(x)}{dx}$$
+        And perform a small mutation:
+        $$f(x + dx) = f'(x) dx + f(x)$$
+        Using this expression, we can expand the first term
+    - text: >
+        Expand the first term yet another time with $y = g(x)$ and $dy =
+        \frac{dg(x)}{dx} dx$:
+
+        $$\frac{f(y + dy) - f(g(x))}{dx} = \frac{f(y) + f'(y) dy -
+        f(g(x))}{dx}$$
+    - text: |
+        Take definiion of derivative and insert f(g(x)) 
+        instead of f(x):
+        $$\frac{df(x)}{dx} = \frac{f(x + dx) - f(x)}{dx} = 
+        \frac{f(g(x + dx)) - f(g(x))}{dx}$$
+    - text: |
+        The first and the last terms cancel out:
+        $$\frac{f'(g(x)) g'(x) dx}{dx}$$
+answer:
+  - 399e162d78b04bf4177728ef4ffb447c
+  - 432352fdfe273dd18a01685d192786b0
+  - 23c37535b912b0f45a15d8b3fe36182c
+  - fb48dab6204666f3609adf839ac4e94f
+  - 38c3eae688787a3d79a430cc27601917
+  - e5ddf78b6ce315ab3cc3ff5800006159
+  - 7a0f9a28c9800d005540c8168a20360c
+  - 8d3e4b121562ddd07880c30caea4d55b

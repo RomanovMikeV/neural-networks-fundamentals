@@ -1,1 +1,0 @@
-# Matrices Manual Exercise

@@ -1,5 +1,14 @@
 FROM python:3.11
 
+
+# Install Node.js/npm so Codex CLI can be installed
+RUN apt-get update && apt-get install -y \
+    nodejs \
+    npm \
+    && npm install -g @openai/codex \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt /app/requirements.txt
 
 WORKDIR /app

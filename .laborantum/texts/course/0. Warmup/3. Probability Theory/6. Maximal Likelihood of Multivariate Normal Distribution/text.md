@@ -1,0 +1,1 @@
+# 6. Maximal Likelihood of Multivariate Normal Distribution

@@ -1,1 +1,0 @@
-# 1. Proof of linearity of the Expextance

@@ -1,0 +1,65 @@
+type: order_cards
+visible: false
+header: Pseudo-inverse Matrix Derivation
+text: |
+  Order the cards to derive the pseudo-inverse solution of linear
+  regression from the MSE gradient.
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        Therefore the least-squares solution can be written as:
+
+
+        $$w = X^+y$$
+
+
+        This formula projects the target vector onto the column space of $X$ and
+        chooses weights that produce the closest reachable prediction.
+
+
+        As one can see, $X^T X$ here is also quite important.
+    - text: |
+        Rearrange the equation into the normal equations:
+
+        $$X^T Xw = X^T y$$
+    - text: |
+        From the MSE gradient derivation, the gradient is:
+
+        $$\nabla_w L(w) = \frac{2}{n}X^T(Xw - y)$$
+    - text: >
+        If the columns of $X$ are linearly independent, then $X^T X$ is
+        invertible. Multiply both sides by $(X^T X)^{-1}$:
+
+
+        $$w = (X^T X)^{-1}X^T y$$
+    - text: >
+        At an optimum of this convex quadratic loss, set the gradient equal to
+        zero:
+
+
+        $$\frac{2}{n}X^T(Xw - y) = 0$$
+    - text: |
+        The matrix multiplying $y$ is called the left pseudo-inverse of $X$:
+
+        $$X^+ = (X^T X)^{-1}X^T$$
+    - text: |
+        Remove the nonzero scalar factor and distribute $X^T$:
+
+        $$X^T Xw - X^T y = 0$$
+    - text: >
+        Start from the same linear regression setup: $X \in \mathbb{R}^{n \times
+        d}$, $w \in \mathbb{R}^{d}$, and $y \in \mathbb{R}^{n}$.
+
+
+        We want weights whose predictions $Xw$ minimize $\|Xw - y\|_2^2$.
+answer:
+  - 7c91885f5715758f53cb43989627eee2
+  - 880771a7b9ddb616dfa5d2d3c60a1711
+  - 7fee6dd46bc6f77577f46688a27c8db4
+  - 1627581ff16eb7784cc036420444a9f5
+  - a130bf6847bf1aac8ba52955adc82827
+  - 4a45793b8206620b978493423b30c297
+  - 99f6e27829470339d4a6ecf69ba82667
+  - 7e5a15ffdef59591228b21ce001794e3

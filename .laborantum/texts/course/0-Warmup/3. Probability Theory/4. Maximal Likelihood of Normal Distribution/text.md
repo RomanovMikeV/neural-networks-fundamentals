@@ -1,1 +1,0 @@
-# 4. Maximal Likelihood of Normal Distribution

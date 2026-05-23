@@ -1,0 +1,54 @@
+type: order_cards
+visible: false
+header: Linearity of Expectation
+text: Order the cards to reconstruct linearity of expectation proof
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
+        \eta_n$$
+    - text: |
+        Start with definition of $\mathbb E \xi$,
+        $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
+        where k runs over all possible $x_k$ outputs
+    - text: >
+        Rewriting this formula, we will get:
+
+        $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
+        \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+    - text: >
+        Thus, we can rewrite
+
+        $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k = \sum_k \frac{\#(\xi = x_k)}{N}
+        x_k = \frac{1}{N} \sum_{n = 1}^N \xi_n,$$
+
+        where $\xi_n$ is the $n$-th instance of random value $\xi$ and $n$ runs
+        through all of
+
+        the $N$ experiments
+    - text: |
+        But we know that
+        $$\mathbb E \xi =\frac{1}{N}\sum_{n=1}^N \xi_n$$
+        $$\mathbb E \eta =\frac{1}{N}\sum_{n=1}^N \eta_n$$
+    - text: |
+        Thus, we have proved:
+        $$\mathbb E (a \xi + b \eta) = a \mathbb E \xi + b \mathbb E \eta$$
+    - text: >
+        Consider $\mathbb E (a \xi + b \eta)$ and rewrite as average of many
+        experiments:
+    - text: >
+        Using the classical definition of probability, we may think of $p(\xi =
+        x_k)$ as
+
+        about a fraction of the experiments that yield $x_k$ as the output
+answer:
+  - 28a9b423c52b77efc2cb4f13bf8849c3
+  - 4a0e6f5b5de6994c19d5eddad214a490
+  - 33491c6e40385c2d5cbf07cfe77b26a0
+  - f4d5536168e7e3bd06a3dfbb8a2e8bf2
+  - 28a1b47939874c3e0fe753e33e37cadf
+  - 5de420d30ddb94f5373d183ba51ea368
+  - 4480cfd352af3f8cd2e146d5e670382c
+  - 75e9f637048249e18f21deea77812430

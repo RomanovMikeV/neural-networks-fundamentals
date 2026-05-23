@@ -1,0 +1,24 @@
+type: order_cards
+visible: false
+header: Matrix Product
+text: >
+  Reorder the matrix product operations in the optimal
+
+  order:
+
+
+  $$A_{5 \times 10} \  B_{10 \times 2}\ C_{2 \times 30}\ D_{30 \times 3}\ E_{3
+  \times 9}$$
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: $DE$
+    - text: $CD$
+    - text: $BC$
+    - text: $AB$
+answer:
+  - 5e6ae92f35580b2e5b7c39625381aaf2
+  - c06ab6b1b369574c3653ad36febe2a6d
+  - bad4d84df7bcfa94ce717270b69b18e4
+  - 04364b1e31b104553437235ca2314b60

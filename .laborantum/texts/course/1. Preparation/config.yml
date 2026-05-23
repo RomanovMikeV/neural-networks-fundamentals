@@ -1,0 +1,10 @@
+order:
+  - 1. PyTorch Getting Started
+  - 2. Gradient Descent Practice
+  - 3. MSE Gradient for Linear Regression
+  - 4. Pseudo-inverse Matrix Derivation
+  - 5. Spectral Geometry of Linear Regression
+  - 6. Careful Analysis of Linear Regression
+  - 7. Understanding Backpropagation
+  - 8. Coding Backpropagation
+  - 9. Training a Simple Network

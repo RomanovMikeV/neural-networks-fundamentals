@@ -1,0 +1,80 @@
+type: order_cards
+visible: false
+header: Maximal Likelihood
+text: |
+  Order cards to get derivation of loglikelihood of
+  normal distribution.
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        Turning maximization problem into standard minimization problem,
+
+        we get the loss function:
+
+
+        $$L = \frac{k}{2} \log (\det \Sigma) + \sum_k (\mathbf x_k - \mu)^T
+        \Sigma^{-1}(\mathbf x_k - \mu)$$
+    - text: >
+        The best parameters will be such $\Sigma$ and $\mu$ that are the 
+
+        solution of the following optization problem:
+
+
+        $$\Sigma, \mu = \underset{\Sigma, \mu}{\textrm{argmin}}
+        \left[\frac{k}{2} \log (\det \Sigma) + \sum_k (\mathbf x_k - \mu)^T
+        \Sigma^{-1}(\mathbf x_k - \mu) \right]$$
+    - text: >
+        Consider a set of samples 
+
+
+        $\mathbf x_1, \mathbf x_2, \dots, \mathbf x_n$
+
+
+        that are supposedly drawn from Normal Distribution:
+
+
+        $p(x) = \frac{1}{(2 \pi)^{n/2} (\det \Sigma)^{1/2}} \exp(- (\mathbf x -
+        \mu)^T \Sigma^{-1}(\mathbf x - \mu) )$
+
+
+        where $\Sigma$ is covariation matrix of cooridnates of vector $\mathbf
+        x$
+
+        and $\mu$ is a vector of means that we need to find
+
+
+        Thus the task is to find parameters $\Sigma$ and $\mu$ that
+
+        the best fit for the set of samples
+    - text: >
+        Let us find probability of the set of samples assuming that
+
+        every sample is independent on the others:
+
+
+        $P(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_N) = \prod_k p(\mathbf
+        x_k)$
+    - text: |
+        The first term is a constant and cannot be optimized, while the
+        second and third ones can be maximized by tuning $\mu$ and $\Sigma$
+    - text: >
+        Take logarithm of the probability of the observed set to get rid
+
+        of summation:
+
+
+        $$\log P(\mathbf x_1, \mathbf x_2, \dots, \mathbf x_N) = $$
+
+        $$= \sum_k \log p(\mathbf x_k) =$$
+
+        $$= - k \log (2 \pi)^{n/2} - k \log ((\det \Sigma)^{1/2}) - \sum_k
+        (\mathbf x_k - \mu)^T \Sigma^{-1}(\mathbf x_k - \mu) $$
+answer:
+  - 5c46b76239dc1c3584383b7ad9984aaf
+  - 00502ae1b3789a8434e6d1dfe5a49348
+  - 3efa82a948ec65e35a764e14d91073b2
+  - 65690792f995ad446e3dbd15ae4743dc
+  - 97ca09da29d3788a80c834bb208cfee0
+  - bcb0eace9b2a3402f78ab7f13376bf4a

@@ -1,0 +1,60 @@
+type: order_cards
+visible: false
+header: Derivative of Sine
+text: Order cards to get proof of derivative of sinus
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: |
+        The first and the last term cancels:
+        $$\frac{- \frac{dx^2}{2} \sin(x) + \cos(x) dx}{dx}$$
+    - text: |
+        $dx$ in enumerator and in denominator cancels:
+        $$- \frac{dx}{2} \sin(x) + \cos(x)$$
+    - text: |
+        Simplify the expression:
+        $$\frac{\sin(x) - \frac{dx^2}{2} \sin(x) + \cos(x) dx - \sin(x)}{dx}$$
+    - text: |
+        For small values of $dx$ first term is negligible:
+        $$\cos(x)$$
+    - text: |
+        Firstly, for small values of $dx$ (The First Wonderful Limit): 
+        $$\sin(dx) \approx dx$$
+    - text: |
+        Expaning the first term in the enumerator:
+        $$\frac{\sin(x) \cos(dx) + \cos(x) \sin(dx) - \sin(x)}{dx}$$
+    - text: >
+        Take derivative of a function and insert $f(x) = \sin (x)$:
+
+        $$\frac{d f(x)}{dx} = \frac{f(x + dx) - f(x)}{dx} = \frac{\sin(x + dx) -
+        \sin(x)}{dx}$$
+    - text: >
+        Substitute the approximations into the expression:
+
+        $$\frac{\sin(x) \left(1 - \frac{dx^2}{2}\right) + \cos(x) dx -
+        \sin(x)}{dx}$$
+    - text: |
+        So, the derivative of $\sin(x)$ is $\cos(x)$:
+        $$\frac{d \sin(x)}{dx} = \cos(x)$$
+    - text: >
+        Secondly, for small values of $dx$ (due to the same reason): 
+
+        $$\cos(dx) = \sqrt{1 - \sin^2 dx} \approx \sqrt{1 - dx^2} \approx 1 -
+        \frac{dx^2}{2}$$
+    - text: |
+        Use formula of sinus of sum:
+        $$\sin(a + b) = \sin(a) \cos(b) + \cos(a) \sin(b)$$
+        to expand the first term in the enumerator.
+answer:
+  - dc86a18a44439b7843e903544cf309b1
+  - 2402cb47af0f010132e3f769b8172787
+  - 8b04743570c52e69e7a1768e583b7196
+  - 6248708a75f7ded8e50d9993e74095c2
+  - b1e4963999c7a67b9ea7374434e119ec
+  - 367508c04a2373bbb83b6808e381521f
+  - e5ced82894647a0d54808466eb87f01c
+  - 5887438e6a477ecc6a0eea3fec880519
+  - ff83f5ede7843bad92acc7a918d2cdde
+  - f769c413435f4469c9d41d464be8cf0f
+  - 486a258efc2bacc07a99efb83655eecb

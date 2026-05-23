@@ -1,0 +1,72 @@
+type: order_cards
+visible: false
+header: MSE Gradient for Linear Regression
+text: |
+  Order the cards to derive the gradient of mean squared error for
+  linear regression in matrix form.
+shuffle: true
+score: 1
+quiz:
+  variants:
+    - text: >
+        Differentiate term by term with respect to $w$.
+
+
+        The target-only term $y^T y$ does not depend on $w$, and $X^T X$ is
+        symmetric:
+
+
+        $$\nabla_w L(w) = \frac{1}{n}\left(2X^T Xw - 2X^T y\right)$$
+    - text: |
+        Factor the common terms:
+
+        $$\nabla_w L(w) = \frac{2}{n}X^T(Xw - y)$$
+    - text: >
+        Expand the product while remembering that the middle terms are scalars:
+
+
+        $$L(w) = \frac{1}{n}\left(w^T X^T Xw - w^T X^T y - y^T Xw + y^T
+        y\right)$$
+    - text: |
+        Substitute the residual definition into the quadratic form:
+
+        $$L(w) = \frac{1}{n}(Xw - y)^T(Xw - y)$$
+    - text: >
+        The mean squared error can be written compactly through the residual
+        vector $r = Xw - y$:
+
+
+        $$L(w) = \frac{1}{n}\|Xw - y\|_2^2 = \frac{1}{n}r^T r$$
+    - text: >
+        The final expression has shape $\mathbb{R}^d$, matching the weight
+        vector. Geometrically, $X^T$ maps prediction errors back into feature
+        coordinates, telling each weight how it should change.
+
+
+        As you can see, the covariance matrix $X^T X$ plays an important role
+        here.
+    - text: >
+        Consider a linear regression model for $n$ samples and $d$ features.
+
+
+        The design matrix is $X \in \mathbb{R}^{n \times d}$, the weight vector
+        is $w \in \mathbb{R}^{d}$, and the targets are $y \in \mathbb{R}^{n}$.
+
+
+        Predictions are collected into one vector:
+
+
+        $$\hat y = Xw$$
+    - text: |
+        Since $w^T X^T y$ and $y^T Xw$ are the same scalar, combine them:
+
+        $$L(w) = \frac{1}{n}\left(w^T X^T Xw - 2w^T X^T y + y^T y\right)$$
+answer:
+  - be19b23ec7e70f7f10e40311da4a6a2c
+  - bd137a098077dd0729f9a30cd8d88134
+  - 264e2e2e8b672ae17ef083daed4329a5
+  - edfa332073f9d97dca4b16f5fc0be180
+  - 6a7ef7fa829dc5f1e662f8ac86a5241e
+  - 85107f504d9a1d3920376687a49aff09
+  - 6132a76a0e85c47c9d0eb951a7df4704
+  - 3c31caa87f27c761ee99594178485e50

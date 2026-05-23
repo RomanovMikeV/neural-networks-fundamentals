@@ -1,0 +1,8 @@
+type: code
+visible: false
+score: 5
+code: []
+run:
+  - env PYDEVD_DISABLE_FILE_VALIDATION=1 MPLCONFIGDIR=/tmp/matplotlib MPLBACKEND=Agg jupyter-execute "${relativeTaskPath}/task.ipynb"
+  - python .laborantum/utils/checker.py -t "${relativeTaskPath}"
+report: ""

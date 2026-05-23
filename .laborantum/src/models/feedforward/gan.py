@@ -7,7 +7,6 @@ class GAN(torch.nn.Module):
             activation=torch.nn.ReLU):
         ...
         ## YOUR CODE HERE
-        # -- placeholder start --
         super().__init__()
 
         generator_layers = []
@@ -27,4 +26,3 @@ class GAN(torch.nn.Module):
 
         self.discriminator = torch.nn.Sequential(*discriminator_layers)
         self.classifier = torch.nn.Linear(channels[-1], 1)
-        # -- placeholder end --

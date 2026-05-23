@@ -12,9 +12,18 @@
               "ms-toolsai.vscode-jupyter-cell-tags",
               "ms-toolsai.vscode-jupyter-slideshow",
               "ms-toolsai.jupyter-renderers",
-              "laborantum.laborantum"
+              "laborantum.laborantum",
+              /* 
+              */
+              "codex.codex"
+              /* 
+              */
           ]
       }
   },
-  "runArgs": ["--memory=4g", "--memory-swap=12g"]
+  "runArgs": [
+    "--memory=4g", 
+    "--memory-swap=12g",
+    "--privileged"
+  ]
 }

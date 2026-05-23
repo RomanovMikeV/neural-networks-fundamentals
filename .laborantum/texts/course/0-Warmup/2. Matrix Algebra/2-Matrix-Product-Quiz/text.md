@@ -1,1 +1,0 @@
-# Matrix Product Quiz
