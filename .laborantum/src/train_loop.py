@@ -137,8 +137,10 @@ def _empty_loss_totals(losses):
 def _compute_losses(losses, batch):
     return {
         ## YOUR CODE HERE
-        loss_name: batch['signals']['output'].sum() * 0.0
-        for loss_name in losses
+        # -- placeholder start --
+        loss_name: loss_fn(batch)
+        for loss_name, loss_fn in losses.items()
+        # -- placeholder end --
     }
 
 
@@ -147,7 +149,9 @@ def _sum_losses(batch_losses):
     for loss_value in batch_losses.values():
         ...
         ## YOUR CODE HERE
-        total_loss = loss_value if total_loss is None else total_loss
+        # -- placeholder start --
+        total_loss = loss_value if total_loss is None else total_loss + loss_value
+        # -- placeholder end --
     return total_loss
 
 
@@ -179,6 +183,11 @@ def _update_metric_totals(metric_totals, metrics, batch):
     for metric_name, metric_fn in metrics.items():
         ...
         ## YOUR CODE HERE
+        # -- placeholder start --
+        enum, denom = metric_fn(batch)
+        metric_totals[metric_name]['enumerator'] += enum
+        metric_totals[metric_name]['denominator'] += denom
+        # -- placeholder end --
 
 
 def _finalize_metric_totals(metric_totals):
@@ -262,16 +271,22 @@ def train_model(
                     # update weights,
                     # switch the model to evaluation mode
                     # update metric numerators/denominators.
+                    # -- placeholder start --
                     model.train()
                     optimizer.zero_grad()
                     model(batch)
+
                     loss_values = _compute_losses(losses, batch)
                     loss_value = _sum_losses(loss_values)
                     batch['losses'] = loss_values
                     batch['loss'] = loss_value
                     loss_value.backward()
+
                     optimizer.step()
                     model.eval()
+
+                    _update_metric_totals(train_metrics, metrics, batch)
+                    # -- placeholder end --
 
                     _update_loss_totals(train_losses, loss_values)
                     _update_loss_emas(loss_emas, loss_values)
@@ -301,11 +316,16 @@ def train_model(
                         # compute and store named validation losses
                         # and update metric numerators/denominators. 
                         # Do not call backward() or step().
+                        # -- placeholder start --
                         model.eval()
                         model(valid_batch)
+
                         valid_loss_values = _compute_losses(losses, valid_batch)
                         valid_batch['losses'] = valid_loss_values
                         valid_batch['loss'] = _sum_losses(valid_loss_values)
+
+                        _update_metric_totals(valid_metrics, metrics, valid_batch)
+                        # -- placeholder end --
 
                         _update_loss_totals(valid_losses, valid_loss_values)
 

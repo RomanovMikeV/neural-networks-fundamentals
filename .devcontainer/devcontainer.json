@@ -8,22 +8,27 @@
           "settings": {},
           "extensions": [
               "ms-python.python",
+              "ms-python.vscode-pylance",
               "ms-toolsai.jupyter",
               "ms-toolsai.vscode-jupyter-cell-tags",
               "ms-toolsai.vscode-jupyter-slideshow",
               "ms-toolsai.jupyter-renderers",
-              "laborantum.laborantum",
-              /* 
-              */
-              "codex.codex"
-              /* 
-              */
+              "laborantum.laborantum"
           ]
       }
   },
+  "forwardPorts": [
+    5000
+  ],
+  "portsAttributes": {
+    "5000": {
+      "label": "MLflow",
+      "onAutoForward": "openBrowser"
+    }
+  },
   "runArgs": [
     "--memory=4g", 
-    "--memory-swap=12g",
-    "--privileged"
-  ]
+    "--memory-swap=12g"
+  ],
+  "mounts": []
 }
