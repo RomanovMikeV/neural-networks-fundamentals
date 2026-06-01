@@ -7,8 +7,8 @@ score: 1
 quiz:
   variants:
     - text: >
-        $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N a \xi_n + b
-        \eta_n$$
+        $$\mathbb E (a \xi + b \eta) = \frac{1}{N}\sum_{n=1}^N (a \xi_n + b
+        \eta_n)$$
     - text: |
         Start with definition of $\mathbb E \xi$,
         $$\mathbb E \xi = \sum_k p(\xi=x_k) x_k,$$
@@ -17,7 +17,7 @@ quiz:
         Rewriting this formula, we will get:
 
         $$\mathbb E (a \xi + b \eta) = a \frac{1}{N}\sum_{n=1}^N \xi_n + b
-        \frac{1}{N}\sum_{n=1}^N b \eta_n$$
+        \frac{1}{N}\sum_{n=1}^N \eta_n$$
     - text: >
         Thus, we can rewrite
 

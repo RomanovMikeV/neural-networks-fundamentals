@@ -20,4 +20,6 @@ lovely-tensors==0.1.18
 pyarmor==9.1.8
 wandb==0.21.1
 torchmetrics==1.8.1
+mlflow==3.12.0
+torchview==0.2.7
 dotenv==0.9.9

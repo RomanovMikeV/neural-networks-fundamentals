@@ -1,63 +1,74 @@
+import math
+from typing import Set
+
 import torch
 from torch import nn
-from typing import Iterable, Tuple, List
+
+
+def _should_touch(parameter: torch.Tensor, only_trainable: bool) -> bool:
+    return (
+        parameter.is_floating_point()
+        and (not only_trainable or parameter.requires_grad)
+    )
+
 
 @torch.no_grad()
 def deterministic_init(
     model: nn.Module,
     start: float = -1.0,
-    end:   float =  1.0,
+    end: float = 1.0,
     include_bias: bool = True,
     only_trainable: bool = True,
 ) -> None:
     """
-    Fill all floating-point parameters of `model` with values from a single
-    global linspace(start, end, steps=total_num_elements) in a *stable* order.
+    Initialize layer weights with a deterministic linspace scaled by fan-in.
 
-    Why this is deterministic:
-      1) We collect parameters by *name* and sort them lexicographically.
-         That breaks any dependency on module construction/registration order.
-      2) We use a single contiguous linspace and assign slices in the sorted order.
+    For each module weight tensor with at least two dimensions, values are set to
+    linspace(start, end, steps=weight.numel()) / sqrt(fan_in), where fan_in is
+    the number of input signals for one output unit.
 
-    Args:
-        model: torch.nn.Module to initialize (in-place).
-        start, end: endpoints for the global linspace.
-        include_bias: include parameters whose name ends with ".bias".
-        only_trainable: if True, only params with requires_grad=True are filled.
-
-    Notes:
-        - We only touch floating-point tensors (skip ints/bools).
-        - Works on CPU/GPU models; the master linspace is built on CPU and sliced
-          onto each parameter's device/dtype to avoid large GPU allocations.
-        - Result depends on the *names* present. Changing architecture or
-          renaming modules will change assignments (as intended).
+    Biases are set to zero when include_bias=True. Other floating parameters are
+    filled with an unscaled linspace as a deterministic fallback.
     """
-    # (name, parameter) list, filtered and sorted for stability
-    params: List[Tuple[str, torch.Tensor]] = []
-    for name, p in model.named_parameters():
-        if not p.is_floating_point():
+    initialized: Set[int] = set()
+
+    for module in model.modules():
+        weight = getattr(module, "weight", None)
+        if isinstance(weight, torch.Tensor) and weight.ndim >= 2:
+            if _should_touch(weight, only_trainable):
+                fan_in, _ = nn.init._calculate_fan_in_and_fan_out(weight)
+                scale = math.sqrt(fan_in) if fan_in > 0 else 1.0
+                values = torch.linspace(
+                    start,
+                    end,
+                    steps=weight.numel(),
+                    dtype=torch.float32,
+                    device="cpu",
+                )
+                values = values.to(device=weight.device, dtype=weight.dtype)
+                weight.copy_(values.view_as(weight) / scale)
+                initialized.add(id(weight))
+
+        bias = getattr(module, "bias", None)
+        if include_bias and isinstance(bias, torch.Tensor):
+            if _should_touch(bias, only_trainable):
+                bias.zero_()
+                initialized.add(id(bias))
+
+    for _, parameter in model.named_parameters():
+        if id(parameter) in initialized:
             continue
-        if only_trainable and not p.requires_grad:
+        if not _should_touch(parameter, only_trainable):
             continue
-        if (not include_bias) and name.endswith(".bias"):
+        if parameter.ndim == 0:
+            parameter.fill_(float(start))
             continue
-        params.append((name, p))
-
-    # Stable order: sort by full parameter name
-    params.sort(key=lambda kv: kv[0])
-
-    # Count total number of elements
-    total = sum(p.numel() for _, p in params)
-    if total == 0:
-        return
-
-    # Build a single global vector on CPU for reproducibility and low GPU mem use
-    master = torch.linspace(start, end, steps=total, dtype=torch.float32, device="cpu")
-
-    # Assign contiguous slices to each parameter, reshaped to its tensor shape
-    idx = 0
-    for _, p in params:
-        n = p.numel()
-        slice_ = master[idx:idx+n].to(device=p.device, dtype=p.dtype, non_blocking=False)
-        p.copy_(slice_.view_as(p))
-        idx += n
+        values = torch.linspace(
+            start,
+            end,
+            steps=parameter.numel(),
+            dtype=torch.float32,
+            device="cpu",
+        )
+        values = values.to(device=parameter.device, dtype=parameter.dtype)
+        parameter.copy_(values.view_as(parameter))

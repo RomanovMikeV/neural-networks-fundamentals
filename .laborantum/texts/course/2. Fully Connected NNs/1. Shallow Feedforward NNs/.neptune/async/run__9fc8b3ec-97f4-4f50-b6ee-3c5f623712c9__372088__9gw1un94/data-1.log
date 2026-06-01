@@ -1,0 +1,6 @@
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 1, "at": 1756843609.1176004}
+{"obj": {"type": "AssignString", "path": ["monitoring", "dbfc4522", "hostname"], "value": "5e209612c6d1"}, "version": 2, "at": 1756843609.1188138}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "5e209612c6d1"}, "version": 3, "at": 1756843609.119963}
+{"obj": {"type": "AssignString", "path": ["monitoring", "dbfc4522", "pid"], "value": "372088"}, "version": 4, "at": 1756843609.1212032}
+{"obj": {"type": "AssignString", "path": ["monitoring", "dbfc4522", "tid"], "value": "281472948305952"}, "version": 5, "at": 1756843609.1235187}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 6, "at": 1756843609.1244674}

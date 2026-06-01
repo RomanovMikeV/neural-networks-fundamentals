@@ -4,7 +4,10 @@ import numbers
 import numpy
 import os
 import Levenshtein
-# import torch
+try:
+    import torch
+except ImportError:
+    torch = None
 
 from json_tricks import load, dump
 from copy import deepcopy
@@ -175,11 +178,15 @@ def run_checks(
 
         return [{'name': test_info, 'ok': True, 'status': 'OK'}]
 
-    # if isinstance(expected, torch.Tensor):
-    #     return run_checks(
-    #         received.detach().numpy(),
-    #         expected.detach().numpy(),
-    #         eps=eps)
+    if torch is not None and isinstance(expected, torch.Tensor):
+        if not isinstance(received, torch.Tensor):
+            explanation = f'FAILED. Expected torch.Tensor, received {type(received)} instead'
+            return [{'name': test_info, 'ok': False, 'status': explanation}]
+        return run_checks(
+            received.detach().cpu().numpy(),
+            expected.detach().cpu().numpy(),
+            test_info=test_info,
+            eps=eps)
 
 
 def replace_last_entrance(path, to_replace, replacement):

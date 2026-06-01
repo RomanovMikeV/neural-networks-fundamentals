@@ -1,0 +1,1 @@
+backbone: Sequential | classifier: Linear(784, 10)

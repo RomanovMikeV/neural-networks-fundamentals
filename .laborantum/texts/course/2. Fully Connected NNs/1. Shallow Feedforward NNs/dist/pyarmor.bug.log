@@ -1,0 +1,12 @@
+[BUG]: no found input "../../../../src"
+
+## Command Line
+/usr/local/bin/pyarmor gen -r ../../../../src --platform windows.x86_64,darwin.x86_64,darwin.arm64,linux.x86_64,linux.aarch64
+
+## Environments
+Python 3.11.12
+Pyarmor 9.1.8 (trial), 000000, non-profits
+Platform linux.aarch64
+Native linux.aarch64
+Home /root/.pyarmor
+

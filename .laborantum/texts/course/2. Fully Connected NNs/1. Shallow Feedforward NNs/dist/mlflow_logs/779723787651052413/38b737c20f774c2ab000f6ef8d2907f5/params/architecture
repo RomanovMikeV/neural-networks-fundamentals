@@ -1,0 +1,1 @@
+backbone.0: Linear(784, 100) | backbone.1: LeakyReLU | classifier: Linear(100, 10)

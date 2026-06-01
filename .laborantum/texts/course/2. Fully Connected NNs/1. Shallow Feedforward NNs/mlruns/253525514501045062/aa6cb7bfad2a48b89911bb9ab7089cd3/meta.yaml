@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/neural-networks/.laborantum/texts/course/2.%20Fully%20Connected%20NNs/1.%20Shallow%20Feedforward%20NNs/mlruns/253525514501045062/aa6cb7bfad2a48b89911bb9ab7089cd3/artifacts
+end_time: 1779917083317
+entry_point_name: ''
+experiment_id: '253525514501045062'
+lifecycle_stage: active
+run_id: aa6cb7bfad2a48b89911bb9ab7089cd3
+run_name: one_layer_fcnn
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779917034622
+status: 3
+tags: []
+user_id: root

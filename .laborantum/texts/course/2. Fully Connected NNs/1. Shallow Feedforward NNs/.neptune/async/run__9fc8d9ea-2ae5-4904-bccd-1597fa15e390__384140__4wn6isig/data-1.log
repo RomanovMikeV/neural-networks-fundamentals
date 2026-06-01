@@ -1,0 +1,10 @@
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 1, "at": 1756849982.8802235}
+{"obj": {"type": "AssignString", "path": ["monitoring", "2f619e9a", "hostname"], "value": "5e209612c6d1"}, "version": 2, "at": 1756849982.8806818}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "5e209612c6d1"}, "version": 3, "at": 1756849982.880918}
+{"obj": {"type": "AssignString", "path": ["monitoring", "2f619e9a", "pid"], "value": "384140"}, "version": 4, "at": 1756849982.8811255}
+{"obj": {"type": "AssignString", "path": ["monitoring", "2f619e9a", "tid"], "value": "281473281916960"}, "version": 5, "at": 1756849982.8813298}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 6, "at": 1756849982.8815613}
+{"obj": {"type": "LogFloats", "path": ["losses", "train", "loss"], "values": [{"value": 0.37491339265305523, "step": null, "ts": 1756849988.6845043}]}, "version": 7, "at": 1756849988.6872823}
+{"obj": {"type": "LogFloats", "path": ["losses", "val", "loss"], "values": [{"value": 0.0, "step": null, "ts": 1756849988.689854}]}, "version": 8, "at": 1756849988.6898718}
+{"obj": {"type": "LogFloats", "path": ["losses", "train", "loss"], "values": [{"value": 0.2849124831502342, "step": null, "ts": 1756849994.5750809}]}, "version": 9, "at": 1756849994.5752509}
+{"obj": {"type": "LogFloats", "path": ["losses", "val", "loss"], "values": [{"value": 0.0, "step": null, "ts": 1756849994.5759585}]}, "version": 10, "at": 1756849994.5759761}

@@ -1,0 +1,14 @@
+{"obj": {"type": "AssignString", "path": ["sys", "description"], "value": ""}, "version": 1, "at": 1756073965.0172045}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e887afdd", "hostname"], "value": "5e209612c6d1"}, "version": 2, "at": 1756073965.0180345}
+{"obj": {"type": "AssignString", "path": ["sys", "hostname"], "value": "5e209612c6d1"}, "version": 3, "at": 1756073965.0184965}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e887afdd", "pid"], "value": "735466"}, "version": 4, "at": 1756073965.0189512}
+{"obj": {"type": "AssignString", "path": ["monitoring", "e887afdd", "tid"], "value": "281472822169632"}, "version": 5, "at": 1756073965.0193653}
+{"obj": {"type": "AssignBool", "path": ["sys", "failed"], "value": false}, "version": 6, "at": 1756073965.0199318}
+{"obj": {"type": "LogFloats", "path": ["losses", "train", "loss"], "values": [{"value": 0.26704483587400746, "step": null, "ts": 1756073967.9492462}]}, "version": 7, "at": 1756073967.9497974}
+{"obj": {"type": "LogFloats", "path": ["metrics", "train", "accuracy"], "values": [{"value": 0.9234666666665128, "step": null, "ts": 1756073967.9510226}]}, "version": 8, "at": 1756073967.951041}
+{"obj": {"type": "LogFloats", "path": ["losses", "val", "loss"], "values": [{"value": 0.2579350173390951, "step": null, "ts": 1756073967.9513428}]}, "version": 9, "at": 1756073967.9513547}
+{"obj": {"type": "LogFloats", "path": ["metrics", "val", "accuracy"], "values": [{"value": 0.9687499999990328, "step": null, "ts": 1756073967.951588}]}, "version": 10, "at": 1756073967.951596}
+{"obj": {"type": "LogFloats", "path": ["losses", "train", "loss"], "values": [{"value": 0.2671006153171917, "step": null, "ts": 1756073970.1709275}]}, "version": 11, "at": 1756073970.1709566}
+{"obj": {"type": "LogFloats", "path": ["metrics", "train", "accuracy"], "values": [{"value": 0.9236833333331794, "step": null, "ts": 1756073970.1712992}]}, "version": 12, "at": 1756073970.1713095}
+{"obj": {"type": "LogFloats", "path": ["losses", "val", "loss"], "values": [{"value": 0.3409464061151295, "step": null, "ts": 1756073970.1715066}]}, "version": 13, "at": 1756073970.1715171}
+{"obj": {"type": "LogFloats", "path": ["metrics", "val", "accuracy"], "values": [{"value": 0.9687499999990328, "step": null, "ts": 1756073970.1716983}]}, "version": 14, "at": 1756073970.171711}

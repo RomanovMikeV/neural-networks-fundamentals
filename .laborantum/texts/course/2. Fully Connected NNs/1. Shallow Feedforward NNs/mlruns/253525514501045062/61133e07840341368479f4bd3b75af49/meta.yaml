@@ -1,0 +1,14 @@
+artifact_uri: file:///workspaces/neural-networks/.laborantum/texts/course/2.%20Fully%20Connected%20NNs/1.%20Shallow%20Feedforward%20NNs/mlruns/253525514501045062/61133e07840341368479f4bd3b75af49/artifacts
+end_time: 1779917034172
+entry_point_name: ''
+experiment_id: '253525514501045062'
+lifecycle_stage: active
+run_id: 61133e07840341368479f4bd3b75af49
+run_name: simple_network_training
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1779916988788
+status: 3
+tags: []
+user_id: root
