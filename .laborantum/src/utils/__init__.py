@@ -6,3 +6,4 @@ from .collate import collate_tensors_only
 from .safecatch import safecatch
 from . import mlflow
 from . import model_visualisation
+from . import pyarmor
