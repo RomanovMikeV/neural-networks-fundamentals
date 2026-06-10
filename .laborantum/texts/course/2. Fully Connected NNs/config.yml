@@ -2,3 +2,4 @@ order:
   - 1. Shallow Feedforward NNs
   - 2. Autoencoder
   - 3. Adversarial Networks
+  - 4. Word2Vec

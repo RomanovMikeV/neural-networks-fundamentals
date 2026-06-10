@@ -1,0 +1,14 @@
+type: code
+visible: false
+score: 30
+code:
+  - .laborantum/texts/course/2. Fully Connected NNs/4. Word2Vec/task.ipynb
+  - .laborantum/src/datasets/wikicorpora.py
+  - .laborantum/src/models/feedforward/word2vec.py
+run:
+  - env PYDEVD_DISABLE_FILE_VALIDATION=1 MPLCONFIGDIR=/tmp/matplotlib MPLBACKEND=Agg jupyter-execute "${relativeTaskPath}/task.ipynb"
+  - cd "${relativeTaskPath}/dist"; env MPLCONFIGDIR=/tmp/matplotlib MPLBACKEND=Agg python task.py
+  - mv "${relativeTaskPath}/dist/.answer.json" "${relativeTaskPath}/.solution.json"
+  - python .laborantum/utils/checker.py -t "${relativeTaskPath}"
+  - rm "${relativeTaskPath}/.answer.json"
+  - rm "${relativeTaskPath}/.solution.json"
