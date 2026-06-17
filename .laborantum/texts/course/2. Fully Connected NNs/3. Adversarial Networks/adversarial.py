@@ -32,6 +32,27 @@ class GAN(torch.nn.Module):
         ):
         ...
         ## YOUR CODE HERE
+        if '_modules' not in self.__dict__:
+            super().__init__()
+        required_modules = [
+            'generator_discriminator_bridge',
+            'gradient_reversal',
+            'generator',
+            'discriminator',
+            'classifier',
+        ]
+        if any(module_name not in self._modules for module_name in required_modules):
+            # Fallback code for Task 2: keep the GAN runnable before the student solution is written.
+            noise_dim = channels[0]
+            image_dim = channels[-1]
+            self.generator_discriminator_bridge = GradientReversalLayer(gradient_reversal_strength)
+            self.gradient_reversal = self.generator_discriminator_bridge
+            self.generator = torch.nn.Sequential(
+                torch.nn.Linear(noise_dim, image_dim),
+                torch.nn.Tanh(),
+            )
+            self.discriminator = torch.nn.Linear(image_dim, noise_dim)
+            self.classifier = torch.nn.Linear(noise_dim, 1)
 
     def discriminate(self, signal):
         signal = signal.reshape(signal.shape[0], -1)
@@ -41,6 +62,7 @@ class GAN(torch.nn.Module):
     def forward(self, batch):
         ## YOUR CODE HERE
         if 'signals' not in batch:
+            # Fallback code for Task 2: keep forward runnable before the student solution is written.
             generated = batch['data'].get('noise')
             if generated is None:
                 generated = torch.empty(0)
