@@ -1,23 +1,23 @@
 {
   "name": "dockerContainer",
   "build": {
-      "dockerfile": "Dockerfile"
+    "dockerfile": "Dockerfile"
   },
   "customizations": {
-      "vscode": {
-          "settings": {},
-          "extensions": [
-              "ms-python.python",
-              "ms-python.vscode-pylance",
-              "ms-toolsai.jupyter",
-              "ms-toolsai.vscode-jupyter-cell-tags",
-              "ms-toolsai.vscode-jupyter-slideshow",
-              "ms-toolsai.jupyter-renderers",
-              "laborantum.laborantum",
-              /* 
-              */
-          ]
-      }
+    "vscode": {
+      "settings": {},
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-toolsai.vscode-jupyter-cell-tags",
+        "ms-toolsai.vscode-jupyter-slideshow",
+        "ms-toolsai.jupyter-renderers",
+        "laborantum.laborantum",
+        /*
+        */
+      ]
+    }
   },
   "forwardPorts": [
     5000
@@ -29,9 +29,19 @@
     }
   },
   "runArgs": [
-    "--memory=4g", 
+    "--memory=4g",
     "--memory-swap=12g",
+    /*
+    */
   ],
+  "containerEnv": {
+    "CUDA_VISIBLE_DEVICES": "",
+    "NVIDIA_VISIBLE_DEVICES": "none",
+    "SSH_AUTH_SOCK": "/run/host-services/ssh-auth.sock"
+  },
   "mounts": [
+    "source=/run/host-services/ssh-auth.sock,target=/run/host-services/ssh-auth.sock,type=bind",
+    /*
+    */
   ]
 }
